@@ -1,0 +1,27 @@
+{
+  "name": "pi-title",
+  "version": "0.1.0",
+  "description": "ORGM Pi extension package for title.",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/osmargm1202/pi-title.git"
+  },
+  "bugs": {
+    "url": "https://github.com/osmargm1202/pi-title/issues"
+  },
+  "homepage": "https://github.com/osmargm1202/pi-title#readme",
+  "keywords": ["pi-package", "pi-extension", "orgm", "title"],
+  "files": ["extensions", "README.md"],
+  "scripts": {
+    "test": "node --test",
+    "pack:check": "npm pack --dry-run"
+  },
+  "pi": {
+    "extensions": ["./extensions/title.ts"]
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "^0.79.0"
+  }
+}
