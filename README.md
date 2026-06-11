@@ -2,7 +2,7 @@
 
 ORGM Pi extension package for title.
 
-Status: scaffold only. Runtime behavior still lives in \ until extraction lands.
+Status: scaffold only. Runtime behavior still lives in `pi-harness` until extraction lands.
 
 ## Install
 
@@ -26,16 +26,16 @@ This package is part of the ORGM Pi extension stack.
 
 Packages:
 
-- \: local memory/context index provider.
-- \: caveman runtime and shared state events.
-- \: ORGM commands, config, title, ask/todo/banner bridge.
-- \: Zentui-based editor/footer UI that displays ORGM status.
+- `pi-mem`: local memory/context index provider.
+- `pi-caveman`: caveman runtime and shared state events.
+- `pi-harness`: ORGM commands, config, title, ask/todo/banner bridge.
+- `pi-footer`: Zentui-based editor/footer UI that displays ORGM status.
 
 ## Coupled integrations
 
 Produces:
 
-- Future extracted \ behavior from \.
+- Future extracted `title` behavior from `pi-harness`.
 
 Consumes:
 
@@ -48,8 +48,8 @@ Hard dependencies:
 
 Soft dependencies:
 
-- \ remains compatibility owner until extraction completes.
-- \ remains editor/footer UI owner.
+- `pi-harness` remains compatibility owner until extraction completes.
+- `pi-footer` remains editor/footer UI owner.
 
 ## Development
 
