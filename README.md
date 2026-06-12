@@ -1,59 +1,40 @@
 # pi-title
 
-ORGM Pi extension package for title.
-
-Status: scaffold only. Runtime behavior still lives in `pi-harness` until extraction lands.
+ORGM Pi title package.
 
 ## Install
-
-Standalone install:
 
 ```bash
 pi install git:github.com/osmargm1202/pi-title
 ```
 
-Recommended ORGM stack install:
+This package is also loaded by the ORGM bundle:
 
 ```bash
-for pkg in pi-mem pi-caveman pi-harness pi-footer; do
-  pi install git:github.com/osmargm1202/$pkg
-done
+pi install git:github.com/osmargm1202/pi-harness
 ```
 
-## ORGM Pi stack
+## Owns
 
-This package is part of the ORGM Pi extension stack.
+- `/orgm-title`
+- session title state entries: `session-title`
+- title state event: `title:state-changed`
+- title generation/update behavior
 
-Packages:
+## Consumed by
 
-- `pi-mem`: local memory/context index provider.
-- `pi-caveman`: caveman runtime and shared state events.
-- `pi-harness`: ORGM commands, config, title, ask/todo/banner bridge.
-- `pi-footer`: Zentui-based editor/footer UI that displays ORGM status.
+- `pi-footer` displays title state.
+- `pi-banner` may display title/context later.
 
-## Coupled integrations
+## Rules
 
-Produces:
-
-- Future extracted `title` behavior from `pi-harness`.
-
-Consumes:
-
-- Pi extension APIs.
-- ORGM stack events only where required by extracted behavior.
-
-Hard dependencies:
-
-- None planned. Package should load alone.
-
-Soft dependencies:
-
-- `pi-harness` remains compatibility owner until extraction completes.
-- `pi-footer` remains editor/footer UI owner.
+- `pi-title` may generate/update titles.
+- `pi-footer` must only display title state and must not generate titles.
 
 ## Development
 
 ```bash
+npm install
 npm test
 npm run pack:check
 ```
